@@ -1,0 +1,509 @@
+ /*— Réinitialisation des marges et du box-sizing pour tous les éléments —*/
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*— Style global du body (texte, couleur de fond, police) —*/
+body {
+  font-family: 'SamsungOne', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/*— HEADER : barre de navigation en haut de la page —*/
+header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  border-bottom: 1px solid #ddd;
+}
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #1f2e50;
+}
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #1f2e50;
+  font-weight: 500;
+}
+
+/*— HERO : grande image avec texte d’intro —*/
+.hero {
+  position: relative;
+  height: 65vh;
+  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease;
+}
+/* Effet zoom au survol */
+.hero:hover {
+  transform: scale(1.03);
+}
+/* Superposition sombre pour rendre le texte lisible */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+.overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.overlay p {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+/* Bouton dans le hero */
+.btn {
+  margin-top: 1.5rem;
+  padding: 0.9rem 1.8rem;
+  background-color: white;
+  color: #333;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+
+/*— section avec les services proposés */
+.services {
+  padding: 50px 20px;
+  text-align: center;
+}
+.services h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #1f2e50;
+}
+/* Galerie des services (responsive) */
+.service-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.service {
+  width: 250px;
+}
+.service img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease;
+}
+.service img:hover {
+  transform: scale(1.05);
+}
+.service p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #1f2e50;
+}
+
+/* avant / après */
+.avant-apres {
+  padding: 50px 20px;
+  text-align: center;
+  margin-top: 0;
+}
+.avant-apres h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #1f2e50;
+}
+.images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.images div {
+  text-align: center;
+}
+.images img {
+  width: 220px;
+  border-radius: 5px;
+}
+
+/* section des avis clients */
+.temoignages {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.temoignages h2 {
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #1f2e50;
+}
+/* Container des avis clients*/
+.avis-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+.avis {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  color: #000;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.avis:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.avis img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #1f2e50;
+}
+.avis blockquote {
+  font-style: italic;
+  color: #222;
+}
+.avis cite {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #1f2e50;
+}
+.etoiles {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #000;
+  user-select: none;
+}
+.btn-avis {
+  text-align: center;
+  margin-top: 30px;
+}
+.bouton {
+  display: inline-block;
+  background-color: #1f2e50;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.bouton:hover {
+  background-color: #163056;
+}
+
+/* Présentation de l’entreprise */
+.a-propos {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.a-propos h2 {
+  color: #1f2e50;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.a-propos p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/*— POURQUOI NOUS CHOISIR : mise en avant des points forts —*/
+.why-choose-us {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+.why-choose-us h2 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  color: #333;
+}
+/* Grille responsive pour les raisons */
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px 40px;
+  justify-items: center;
+  padding: 0 20px;
+}
+.reason {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.reason:hover {
+  transform: translateY(-5px);
+}
+/* Animation légère en quinconce */
+.reason:nth-child(odd) {
+  transform: translateY(20px);
+}
+.reason:nth-child(even) {
+  transform: translateY(0);
+}
+.reason p {
+  font-size: 1em;
+  color: #444;
+}
+
+/* galerie de projets réalisés */
+.realisations {
+  padding: 50px 20px;
+  text-align: center;
+}
+.realisations h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #1f2e50;
+}
+.intro-realisations {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #444;
+}
+.realisations-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.realisations-gallery img {
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.realisations-gallery img:hover {
+  transform: scale(1.05);
+}
+
+
+
+.btn-primary {
+  background-color: #1f2e50;
+  color: white;
+  padding: 14px 40px;
+  font-weight: 600;
+  border-radius: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(31,46,80,0.3);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+
+
+margin-top: 35px; /* ← voilà, ça décale le bouton vers le bas */
+}
+
+.btn-primary:hover {
+  background-color: #163155;
+  box-shadow: 0 6px 15px rgba(22,49,85,0.6);
+}
+
+
+
+
+
+/* bas de page avec coordonnées et liens */
+footer {
+  background-color: #1f2e50;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+footer .coordonnees p,
+footer .reseaux a {
+  margin-bottom: 10px;
+}
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+/*— MÉDIAS QUERIES : styles responsives pour les petits écrans —*/
+@media (max-width: 768px) {
+  header,
+  .temoignage,
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  nav a {
+    margin: 10px;
+  }
+  .hero {
+    height: 50vh;
+  }
+  .overlay h1 { font-size: 2rem; }
+  .overlay p { font-size: 1rem; }
+  .services,
+  .avant-apres,
+  .temoignages,
+  .realisations {
+    padding: 30px 10px;
+  }
+  .service-gallery,
+  .images,
+  .avis-container,
+  .realisations-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service,
+  .avis {
+    width: 90%;
+  }
+}
+
+/* ==== Popup élégante pour demande de devis ==== */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(10, 10, 20, 0.6); /* foncé et élégant */
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+.popup-content {
+  background: #fefefe;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 350px;
+  width: 90%;
+  animation: fadeIn 0.3s ease-out;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+.popup-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.popup-content .btn {
+  display: block;
+  background: #0a2540; /* Bleu nuit */
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 18px;
+  margin: 12px auto;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.popup-content .btn:hover {
+  background: #133e6b;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.4rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Animation d’entrée */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+#devisBtn {
+  background-color: #fff;          /* Blanc pur */
+  color: #0a2540;                  /* Bleu foncé élégant */
+  border: none;                   /* Pas de bordure */
+  padding: 16px 36px;             /* Un peu plus large */
+  font-size: 1.15rem;             /* Taille un peu plus grande */
+  font-weight: 700;               /* Gras */
+  border-radius: 30px;            /* Bords très arrondis style "pill" */
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(10, 37, 64, 0.12); /* Ombre douce */
+  transition: all 0.35s ease;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+}
+
+#devisBtn:hover,
+#devisBtn:focus {
+  background-color: #0a2540;      /* Bleu foncé au survol */
+  color: #fff;                    /* Texte blanc */
+  box-shadow: 0 10px 20px rgba(10, 37, 64, 0.3); /* Ombre plus marquée */
+  outline: none;
+  transform: translateY(-2px);    /* Légère remontée au survol */
+}
